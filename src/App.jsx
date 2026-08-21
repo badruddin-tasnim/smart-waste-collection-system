@@ -1,6 +1,20 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import AdminSidebar from './components/layout/AdminSidebar';
 import ResidentNav from './components/layout/ResidentNav';
+import { RequireAuth } from './components/auth/RequireAuth';
+
+// Auth pages (Member 3)
+import Login from './pages/Login';
+import Register from './pages/Register';
+
+// Resident pages (Member 3)
+import ResidentSchedule from './pages/resident/ResidentSchedule';
+import ResidentRequests from './pages/resident/ResidentRequests';
+import ResidentProfile from './pages/resident/ResidentProfile';
+
+// Admin pages
+import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminResidents from './pages/admin/AdminResidents';
 
 function Placeholder({ title }) {
   return (
@@ -18,26 +32,40 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
-        
-        {/* Auth routes */}
-        <Route path="/login" element={<Placeholder title="Login" />} />
-        <Route path="/register" element={<Placeholder title="Register" />} />
 
-        {/* Resident routes */}
-        <Route path="/resident" element={<ResidentNav />}>
-          <Route path="schedule" element={<Placeholder title="My Schedule" />} />
-          <Route path="requests" element={<Placeholder title="My Requests" />} />
-          <Route path="profile" element={<Placeholder title="My Profile" />} />
+        {/* Auth routes */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* Resident routes — requires auth with role=resident */}
+        <Route
+          path="/resident"
+          element={
+            <RequireAuth role="resident">
+              <ResidentNav />
+            </RequireAuth>
+          }
+        >
+          <Route path="schedule" element={<ResidentSchedule />} />
+          <Route path="requests" element={<ResidentRequests />} />
+          <Route path="profile" element={<ResidentProfile />} />
         </Route>
 
-        {/* Admin routes */}
-        <Route path="/admin" element={<AdminSidebar />}>
-          <Route path="dashboard" element={<Placeholder title="Admin Dashboard" />} />
+        {/* Admin routes — requires auth with role=admin */}
+        <Route
+          path="/admin"
+          element={
+            <RequireAuth role="admin">
+              <AdminSidebar />
+            </RequireAuth>
+          }
+        >
+          <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="zones" element={<Placeholder title="Zones Management" />} />
           <Route path="routes" element={<Placeholder title="Routes Management" />} />
           <Route path="pickups" element={<Placeholder title="Pickups" />} />
           <Route path="requests" element={<Placeholder title="Resident Requests" />} />
-          <Route path="residents" element={<Placeholder title="Residents List" />} />
+          <Route path="residents" element={<AdminResidents />} />
         </Route>
       </Routes>
     </BrowserRouter>
