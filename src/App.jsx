@@ -5,6 +5,8 @@ import ResidentSchedule from './pages/resident/Schedule';
 import ResidentRequests from './pages/resident/Requests';
 import AdminPickups from './pages/admin/Pickups';
 import AdminRequests from './pages/admin/Requests';
+import Zones from './pages/admin/Zones';
+import RoutesPage from './pages/admin/Routes';
 
 function Placeholder({ title }) {
   return (
@@ -37,8 +39,8 @@ function App() {
         {/* Admin routes */}
         <Route path="/admin" element={<AdminSidebar />}>
           <Route path="dashboard" element={<Placeholder title="Admin Dashboard" />} />
-          <Route path="zones" element={<Placeholder title="Zones Management" />} />
-          <Route path="routes" element={<Placeholder title="Routes Management" />} />
+          <Route path="zones" element={<Zones />} />
+          <Route path="routes" element={<RoutesPage />} />
           <Route path="pickups" element={<AdminPickups />} />
           <Route path="requests" element={<AdminRequests />} />
           <Route path="residents" element={<Placeholder title="Residents List" />} />
