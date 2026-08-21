@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import AdminSidebar from './components/layout/AdminSidebar';
 import ResidentNav from './components/layout/ResidentNav';
+import Zones from './pages/admin/Zones';
+import RoutesPage from './pages/admin/Routes';
 
 function Placeholder({ title }) {
   return (
@@ -33,8 +35,8 @@ function App() {
         {/* Admin routes */}
         <Route path="/admin" element={<AdminSidebar />}>
           <Route path="dashboard" element={<Placeholder title="Admin Dashboard" />} />
-          <Route path="zones" element={<Placeholder title="Zones Management" />} />
-          <Route path="routes" element={<Placeholder title="Routes Management" />} />
+          <Route path="zones" element={<Zones />} />
+          <Route path="routes" element={<RoutesPage />} />
           <Route path="pickups" element={<Placeholder title="Pickups" />} />
           <Route path="requests" element={<Placeholder title="Resident Requests" />} />
           <Route path="residents" element={<Placeholder title="Residents List" />} />
