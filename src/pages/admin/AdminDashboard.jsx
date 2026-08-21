@@ -106,7 +106,7 @@ export default function AdminDashboard() {
         <div>
           <h2 className="text-xl font-semibold text-text-primary">Dashboard</h2>
           <p className="text-text-tertiary text-sm mt-1">
-            Overview of the Smart Waste Collection System
+            Overview of the SWM System
           </p>
         </div>
         <button

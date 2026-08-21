@@ -45,7 +45,7 @@ export default function RouteForm({ initialData, zones, onSubmit, onCancel }) {
 
   return (
     <div className="fixed inset-0 bg-text-primary/20 flex items-center justify-center p-4 z-50">
-      <div className="bg-elevated w-full max-w-lg rounded-modal shadow-card border border-border-subtle p-6 max-h-[90vh] overflow-y-auto">
+      <div className="bg-base w-full max-w-lg rounded-modal shadow-card border border-border-subtle p-6 max-h-[90vh] overflow-y-auto">
         <h2 className="text-[20px] font-semibold mb-6">
           {initialData ? 'Edit Route' : 'New Route'}
         </h2>

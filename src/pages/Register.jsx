@@ -72,7 +72,7 @@ export default function Register() {
               <path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2" />
             </svg>
           </div>
-          <h1 className="text-2xl font-semibold text-text-primary">Smart Waste</h1>
+          <h1 className="text-2xl font-semibold text-text-primary">Smart Waste Management (SWM)</h1>
           <p className="text-text-tertiary text-sm mt-1">Rajshahi City Corporation</p>
         </div>
 

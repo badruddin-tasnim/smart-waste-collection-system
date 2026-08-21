@@ -4,7 +4,7 @@ export default function AdminSidebar() {
   return (
     <div className="flex min-h-screen bg-base text-text-primary font-sans">
       <div className="w-[240px] bg-surface border-r border-border-subtle flex flex-col p-4 shrink-0">
-        <h1 className="text-xl font-semibold mb-8 text-accent">Smart Waste</h1>
+        <h1 className="text-xl font-semibold mb-8 text-accent">SWM</h1>
         <nav className="flex flex-col gap-2">
           <Link to="/admin/dashboard" className="px-3 py-2 rounded text-text-secondary hover:bg-surface2 hover:text-text-primary">Dashboard</Link>
           <Link to="/admin/zones" className="px-3 py-2 rounded text-text-secondary hover:bg-surface2 hover:text-text-primary">Zones</Link>
