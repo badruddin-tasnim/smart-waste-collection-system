@@ -1,6 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import AdminSidebar from './components/layout/AdminSidebar';
 import ResidentNav from './components/layout/ResidentNav';
+import ResidentSchedule from './pages/resident/Schedule';
+import ResidentRequests from './pages/resident/Requests';
+import AdminPickups from './pages/admin/Pickups';
+import AdminRequests from './pages/admin/Requests';
 
 function Placeholder({ title }) {
   return (
@@ -25,8 +29,8 @@ function App() {
 
         {/* Resident routes */}
         <Route path="/resident" element={<ResidentNav />}>
-          <Route path="schedule" element={<Placeholder title="My Schedule" />} />
-          <Route path="requests" element={<Placeholder title="My Requests" />} />
+          <Route path="schedule" element={<ResidentSchedule />} />
+          <Route path="requests" element={<ResidentRequests />} />
           <Route path="profile" element={<Placeholder title="My Profile" />} />
         </Route>
 
@@ -35,8 +39,8 @@ function App() {
           <Route path="dashboard" element={<Placeholder title="Admin Dashboard" />} />
           <Route path="zones" element={<Placeholder title="Zones Management" />} />
           <Route path="routes" element={<Placeholder title="Routes Management" />} />
-          <Route path="pickups" element={<Placeholder title="Pickups" />} />
-          <Route path="requests" element={<Placeholder title="Resident Requests" />} />
+          <Route path="pickups" element={<AdminPickups />} />
+          <Route path="requests" element={<AdminRequests />} />
           <Route path="residents" element={<Placeholder title="Residents List" />} />
         </Route>
       </Routes>
