@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Surfaces */
+    --bg-base:          #FFFFFF;   /* app background */
+    --bg-surface:        #FAFAFA;   /* cards, panels */
+    --bg-surface-2:      #F2F2F2;   /* nested surfaces, table row hover */
+    --bg-elevated:        #FFFFFF;   /* modals, dropdowns (with shadow, see §4) */
+    --border-subtle:      #E7E7E7;
+    --border-default:     #D4D4D4;
+
+    /* Text */
+    --text-primary:        #171717;
+    --text-secondary:      #5C5C5C;
+    --text-tertiary:       #8A8A8A;
+
+    /* Accent — "Collection Green" */
+    --accent:              #12A150;
+    --accent-hover:        #0E8A44;
+    --accent-muted:        rgba(18, 161, 80, 0.10);   /* badges, subtle fills */
+    --accent-border:       rgba(18, 161, 80, 0.30);
+
+    /* Status (kept desaturated so accent green stays the only "loud" color) */
+    --status-pending:      #B7791F;
+    --status-resolved:     #12A150;
+    --status-missed:       #D64545;
+    --status-scheduled:    #737373;
+    
+    --font-sans: 'Geist Sans', 'Inter', system-ui, sans-serif;
+    --font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+  }
+}
