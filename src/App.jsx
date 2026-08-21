@@ -3,11 +3,11 @@ import AdminSidebar from './components/layout/AdminSidebar';
 import ResidentNav from './components/layout/ResidentNav';
 import { RequireAuth } from './components/auth/RequireAuth';
 
-// Auth pages (Member 3)
+// Auth pages
 import Login from './pages/Login';
 import Register from './pages/Register';
 
-// Resident pages (Member 3)
+// Resident pages
 import ResidentSchedule from './pages/resident/ResidentSchedule';
 import ResidentRequests from './pages/resident/ResidentRequests';
 import ResidentProfile from './pages/resident/ResidentProfile';
@@ -15,6 +15,10 @@ import ResidentProfile from './pages/resident/ResidentProfile';
 // Admin pages
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminResidents from './pages/admin/AdminResidents';
+import AdminPickups from './pages/admin/Pickups';
+import AdminRequests from './pages/admin/Requests';
+import Zones from './pages/admin/Zones';
+import RoutesPage from './pages/admin/Routes';
 
 function Placeholder({ title }) {
   return (
@@ -61,10 +65,10 @@ function App() {
           }
         >
           <Route path="dashboard" element={<AdminDashboard />} />
-          <Route path="zones" element={<Placeholder title="Zones Management" />} />
-          <Route path="routes" element={<Placeholder title="Routes Management" />} />
-          <Route path="pickups" element={<Placeholder title="Pickups" />} />
-          <Route path="requests" element={<Placeholder title="Resident Requests" />} />
+          <Route path="zones" element={<Zones />} />
+          <Route path="routes" element={<RoutesPage />} />
+          <Route path="pickups" element={<AdminPickups />} />
+          <Route path="requests" element={<AdminRequests />} />
           <Route path="residents" element={<AdminResidents />} />
         </Route>
       </Routes>
